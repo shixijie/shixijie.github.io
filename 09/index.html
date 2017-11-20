@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/menu.css"/>
+	</head>
+	<body>
+		<div class="nav">
+			<div id="logo" class="fa fa-bars">
+				
+			</div>
+			<!--<ul id="nav" style="transform: translateX(-250px)">-->
+				
+		</div>
+		<ul id="nav" style="transform: translateX(-250px)">
+				<li id="parent">菜单1 <i class="fa fa-angle-right"></i></li>
+				    <ul class="zicaidan" style="display: none">
+				    	<li>1</li>
+				    	<li>2</li>
+				    	<li>3</li>
+				    </ul>
+				<li id="parent">菜单2  <i class="fa fa-angle-right"></i></li>
+				    <ul class="zicaidan" style="display: none">
+				    	<li>1</li>
+				    	<li>2</li>
+				    	<li>3</li>
+				    </ul>
+				<li id="parent">菜单3  <i class="fa fa-angle-right"></i></li>
+				    <ul class="zicaidan" style="display: none">
+				    	<li>1</li>
+				    	<li>2</li>
+				    	<li>3</li>
+				    </ul>
+				<li id="parent">菜单4  <i class="fa fa-angle-right"></i></li>
+				    <ul class="zicaidan" style="display: none">
+				    	<li>1</li>
+				    	<li>2</li>
+				    	<li>3</li>
+				    </ul>
+				<li id="parent">菜单5  <i class="fa fa-angle-right"></i></li>
+				    <ul class="zicaidan" style="display: none">
+				    	<li>1</li>
+				    	<li>2</li>
+				    	<li>3</li>
+				    </ul>
+					
+				
+			</ul>
+		<script type="text/javascript">
+			var Ologo=document.querySelector("#logo");
+			var oNav=document.querySelector("#nav");
+			var oLi=document.querySelectorAll("#nav li#parent");
+			var oLii=document.querySelectorAll("#nav li#parent i");
+			var oUl=document.querySelectorAll(".zicaidan");
+			Ologo.addEventListener("click",function(){
+				
+				if(oNav.style.transform=="translateX(-250px)")
+				{
+					Ologo.style.transform="rotate(90deg)"
+					oNav.style.display="block";
+					nav.style.opacity=1;
+					oNav.style.transform="translateX(0px)";
+					
+//					Ologo2.style.display="block";
+//					setTimeout(none(),5000).
+				}
+				else
+				{
+//					alert(2)
+                    
+					Ologo.style.transform="rotate(0deg)"
+					oNav.style.transform="translateX(-250px)";
+					oNav.style.opacity=0.5;
+				}
+				
+			})
+			
+			
+			//闭包
+			
+			for(var i = 0; i < 5; i++) {
+				oLi[i].addEventListener('click', (function(n) {
+					return function() {
+						for (var j=0;j<5;j++) {
+							if(j==n){
+//							console.log(oArrayWeb[j]);
+							oUl[j].style.display="block";
+							oLii[j].className="fa fa-angle-down";
+//							alert(oLii[j])
+//							alert(j);
+						}else if(j!=n){
+							oUl[j].style.display="none";
+							if(oLii[j].className=="fa fa-angle-down")
+							oLii[j].className="fa fa-angle-right";
+					}
+				}
+//						oUl[j].style.display = "none";
+						
+					};
+				})
+				(i));
+			}
+		</script>
+	</body>
+</html>
